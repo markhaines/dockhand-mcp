@@ -147,7 +147,7 @@ async def create_container(
     if ports:
         body["portBindings"] = _parse_port_bindings(ports)  # camelCase!
     if volumes:
-        body["volumes"] = volumes
+        body["binds"] = volumes  # camelCase! Uses Docker Binds format
     if environment:
         body["environment"] = environment
     
